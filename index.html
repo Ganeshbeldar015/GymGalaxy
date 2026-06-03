@@ -4,40 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GymGalaxy - React App</title>
-    <meta http-equiv="refresh" content="0; url=http://localhost:3000">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background: #000;
-            color: #fff;
-        }
-        .loading {
-            font-size: 24px;
-            color: #c6ff00;
-        }
-        .redirect {
-            margin-top: 20px;
-            font-size: 16px;
-        }
-        a {
-            color: #c6ff00;
-            text-decoration: none;
-        }
-    </style>
+    <meta name="description" content="GymGalaxy - Your fitness journey starts here">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body>
-    <div class="loading">🚀 Starting React Application...</div>
-    <div class="redirect">
-        If you are not redirected automatically, 
-        <a href="http://localhost:3000">click here to open the React app</a>
-         </div>
-    <script>
-        // Fallback redirect
-        setTimeout(() => {
-            window.location.href = 'http://localhost:3000';
-        }, 2000);
-    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
