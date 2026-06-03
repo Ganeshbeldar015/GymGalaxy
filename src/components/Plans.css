@@ -1,91 +1,140 @@
 .plans{
-    background: linear-gradient(135deg, #16213e 0%, #0f0f23 100%);
+    background: #000000;
+    padding: 80px 5%;
+}
+
+.heading{
+    text-align: center;
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 60px;
+    text-transform: capitalize;
+}
+
+.heading span{
+    color: #ff6b35;
 }
 
 .plans-content{
-    display: flex;
-    grid-template-columns: repeat(auto-fit, minmax(350px, auto));
-    align-items: center;
-    gap: 2.3rem;
-    margin-top: 4.2rem;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1800px;
+    margin: 0 auto;
 }
 
 .box{
-    padding: 30px 30px 50px 30px;
-    height: 48rem;
-    background: rgba(15, 15, 35, 0.9);
-    border-radius: 28px;
-    border: 1px solid transparent;
-    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.2);
-    transition: all 0.5s ease;
-    cursor: pointer;
-    flex: 1;
-    min-width: 300px;
-    max-width: 350px;
+    background: #111111;
+    border-radius: 20px;
+    padding: 50px 40px;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 107, 53, 0.2);
+    display: flex;
+    flex-direction: column;
 }
 
-.box h3{
-    font-size: 35px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.box h2{
-    font-size: 43px;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-.box ul li{
-    list-style: disc;
-    font-size: 1.7rem;
-    padding-bottom: 1.2rem;
-}
-
-.box a {
-    display: inline-block;
-    font-size: 22px;
-    line-height: 1.2rem;
-    font-weight: 700;
-    padding: 7px 0;
-    color: #fff;
-    border-bottom: 2px solid #fff; 
-    transition: all 0.5s ease;
-}
-
-.box i{
-    vertical-align: middle;
-    font-size: 25px;
-    color: #ff6b35;
-    margin-left: 5px;
-}
-
-.box a:hover{
-    border-bottom: 2px solid #ff6b35;
+.box:nth-child(2){
+    border: 2px solid #ff6b35;
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(255, 107, 53, 0.3);
 }
 
 .box:hover{
-    border: 1px solid #ff6b35;
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(255, 107, 53, 0.4);
+}
+
+.box:nth-child(2):hover{
+    transform: scale(1.05) translateY(-10px);
+}
+
+.box h3{
+    font-size: 2rem;
+    color: #888;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.box h2{
+    font-size: 4.5rem;
+    color: #fff;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.box h2 span{
+    font-size: 1.5rem;
+    color: #888;
+}
+
+.box ul{
+    list-style: none;
+    margin-bottom: 50px;
+    padding: 0;
+    flex-grow: 1;
+}
+
+.box ul li{
+    font-size: 1.4rem;
+    color: #ccc;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.box ul li i{
+    color: #ff6b35;
+    font-size: 1.5rem;
+}
+
+.box a{
+    display: block;
+    width: 100%;
+    padding: 18px 0;
+    background: #ff6b35;
+    color: #fff;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.box a:hover{
+    background: #f7931e;
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+    transform: translateY(-2px);
 }
 
 /* Mobile Responsive */
-@media (max-width: 768px) {
-    .plans-content {
-        flex-direction: column;
-        align-items: center;
+@media (max-width: 1200px){
+    .plans-content{
+        grid-template-columns: repeat(2, 1fr);
     }
-    
-    .box {
-        width: 100%;
-        max-width: 400px;
-        margin-bottom: 2rem;
+}
+
+@media (max-width: 768px){
+    .plans-content{
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
-    
-    .heading {
-        font-size: 4rem;
+
+    .box:nth-child(2){
+        transform: none;
+    }
+
+    .box:nth-child(2):hover{
+        transform: translateY(-10px);
     }
 }

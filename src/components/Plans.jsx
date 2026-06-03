@@ -55,15 +55,20 @@ const Plans = () => {
                 {plans.map((plan) => (
                     <div key={plan.id} className="box">
                         <h3>{plan.name}</h3>
-                        <h2><span>{plan.price}</span></h2>
+                        <h2>
+                            {plan.price.split('/')[0]}
+                            <span>/{plan.price.split('/')[1]}</span>
+                        </h2>
                         <ul>
                             {plan.features.map((feature, index) => (
-                                <li key={index}>{feature}</li>
+                                <li key={index}>
+                                    <i className="fa-solid fa-check"></i>
+                                    {feature}
+                                </li>
                             ))}
                         </ul>
                         <a href="#">
-                            Join now
-                            <i className="fa-solid fa-arrow-right"></i>
+                            Choose Plan
                         </a>
                     </div>
                 ))}
