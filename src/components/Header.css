@@ -8,26 +8,37 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 2rem 9%;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     transition: all 0.5s ease;
+}
+
+.navbar-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #000000;
+    border-radius: 30px;
+    padding: 0.5rem 1.5rem;
 }
 
 .logo{
     font-size: 3rem;
-    color: #fff;
+    color: #000000;
     font-weight: 800;
     cursor: pointer;
     transition: 0.3s ease-in-out;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
 }
 
 .logo:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 span{
-    color: #ff6b35;
+    color: #D2F509;
 }
 
 .navbar{
@@ -37,39 +48,43 @@ span{
 .navbar a{
     font-size: 1.8rem;
     font-weight: 500;
-    color: #fff;
-    margin-left: 4rem;
-    transition: all 0.5s ease;
-    border-bottom: 3px solid transparent;
+    color: #aaa;
+    margin: 0 1.5rem;
+    transition: all 0.4s ease;
+    border-bottom: 2px solid transparent;
+    letter-spacing: 0.5px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .navbar a:hover,
 .navbar a:active{
-    color: #ff6b35;
-    border-bottom: 3px solid #ff6b35;
+    color: #D2F509;
+    border-bottom: 2px solid #D2F509;
 }
 
 .nav-btn{
     display: inline-block;
-    padding: 1rem 2.8rem;
-    background: transparent;
-    color: #ff6b35;
-    border: 2px solid #ff6b35;
-    border-radius: 1rem;
+    padding: 0.8rem 2rem;
+    background: #D2F509;
+    color: #000000;
+    border: 2px solid #D2F509;
+    border-radius: 25px;
     font-size: 1.6rem;
-    font-family: 600;
-    transition: all 0.5s ease;
+    font-weight: 600;
+    transition: all 0.4s ease;
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .nav-btn:hover{
-    background-color: #ff6b35;
-    color: #fff;
-    box-shadow: 0 0 18px #ff6b35;
+    background-color: #b8e008;
+    color: #000000;
+    box-shadow: 0 0 20px rgba(210, 245, 9, 0.3);
 } 
 
 #menu-icon{
     font-size: 3.6rem;
-    color: #ff6b35;
+    color: #000000;
     cursor: pointer;
     display: none;
 }
@@ -86,9 +101,9 @@ span{
         left: 0;
         width: 100%;
         padding: 1rem 3%;
-        background: rgba(0, 0, 0, 0.9);
+        background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
         transform: translateY(-100%);
         opacity: 0;
         visibility: hidden;
@@ -106,6 +121,7 @@ span{
     .navbar a {
         margin: 1rem 0;
         font-size: 2rem;
+        color: #000;
     }
     
     .top-btn {

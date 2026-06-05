@@ -84,83 +84,23 @@ const Home = () => {
 
     return (
         <section className="home" id="home">
-            {/* Animated Background Elements */}
-            <div className="bg-animations">
-                <div className="floating-shapes">
-                    <div className="shape shape-1"></div>
-                    <div className="shape shape-2"></div>
-                    <div className="shape shape-3"></div>
-                    <div className="shape shape-4"></div>
-                    <div className="shape shape-5"></div>
-                    <div className="shape shape-6"></div>
-                </div>
-                <div className="particle-system">
-                    <div className="particle particle-1"></div>
-                    <div className="particle particle-2"></div>
-                    <div className="particle particle-3"></div>
-                    <div className="particle particle-4"></div>
-                    <div className="particle particle-5"></div>
-                    <div className="particle particle-6"></div>
-                    <div className="particle particle-7"></div>
-                    <div className="particle particle-8"></div>
-                </div>
-                <div className="gradient-orbs">
-                    <div className="orb orb-1"></div>
-                    <div className="orb orb-2"></div>
-                    <div className="orb orb-3"></div>
-                </div>
+            <div className="home-background">
+                <img src="/GYM_Website_Images/image2.jpg" alt="Fitness" className="hero-image" />
+                <div className="hero-overlay"></div>
             </div>
 
-            <div className="home-container">
-                <div className="home-content">
-                    <div className="home-text">
-                        <h3 className="home-subtitle">Transform Your Life</h3>
-                        <h1 className="home-title">Build Your <span className="highlight">Dream Body</span></h1>
-                        <h3 className="home-tagline"><span className="multiple-text">Strength • Power • Confidence</span></h3>
-                        <p className="home-description">
-                            Join our diverse community of fitness enthusiasts. Our supportive atmosphere helps you stay motivated,
-                            make friends, and achieve your fitness goals with world-class equipment and expert guidance.
-                        </p>
-                        <div className="home-buttons">
-                            <a href="#plans" className="btn btn-primary">Start Your Journey</a>
-                            <a href="#about" className="btn btn-secondary">Learn More</a>
-                        </div>
-                        <div className="home-stats" ref={statsRef}>
-                            <div className="stat">
-                                <h4>{stats.members}+</h4>
-                                <p>Happy Members</p>
-                            </div>
-                            <div className="stat">
-                                <h4>{stats.trainers}+</h4>
-                                <p>Expert Trainers</p>
-                            </div>
-                            <div className="stat stat-247">
-                                <h4>24/7</h4>
-                                <p>Gym Access</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="home-visual" ref={homeVisualRef}>
-                    <div className="home-img-container">
-                        <img src="/GYM_Website_Images/home page.jpg" alt="Fitness Training" className="home-img" />
-                        <div className="img-overlay"></div>
-                    </div>
-                    <div className={`floating-cards ${showMobileCards ? 'show-mobile' : ''}`}>
-                        <div className="floating-card card-1">
-                            <i className="fas fa-dumbbell"></i>
-                            <span>Strength Training</span>
-                        </div>
-                        <div className="floating-card card-2">
-                            <i className="fas fa-heart"></i>
-                            <span>Cardio Fitness</span>
-                        </div>
-                        <div className="floating-card card-3">
-                            <i className="fas fa-trophy"></i>
-                            <span>Achieve Goals</span>
-                        </div>
-                    </div>
-                </div>
+            <div className="home-content">
+                <h1 className="hero-title">Transform your life with Fitness</h1>
+                <p className="hero-description">
+                    Join us to achieve your fitness goals with our state-of-the-art facilities, expert trainers, and a supportive community.
+                </p>
+                <a href="#plans" className="hero-button">Join now</a>
+            </div>
+            
+            <div className="curve-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 150" className="curve-svg">
+                    <path fill="#ffffff" fill-opacity="1" d="M0,128L48,122.7C96,117,192,107,288,96C384,85,480,75,576,80C672,85,768,107,864,112C960,117,1056,107,1152,90.7C1248,75,1344,53,1392,42.7L1440,32L1440,150L1392,150C1344,150,1248,150,1152,150C1056,150,960,150,864,150C768,150,672,150,576,150C480,150,384,150,288,150C192,150,96,150,48,150L0,150Z"></path>
+                </svg>
             </div>
         </section>
     );

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
 *{
     padding: 0;
     margin: 0;
@@ -7,7 +9,7 @@
     border: none;
     outline: none;
     scroll-behavior: smooth;
-    font-family: -apple-system, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 html{
@@ -16,8 +18,12 @@ html{
 }   
 
 body{
-    background: #000000;
-    color: #ffffff; 
+    background: #ffffff;
+    color: #000000; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
 }
 
 section{
