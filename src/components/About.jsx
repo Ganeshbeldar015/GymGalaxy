@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import './About.css';
 
 const About = () => {
+    const ref = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["start end", "end start"]
+    });
+
+    const yParallax = useTransform(scrollYProgress, [0, 1], [-50, 50]);
+
     const features = [
         {
             id: 1,
@@ -21,23 +30,77 @@ const About = () => {
         }
     ];
 
+    const cardVariants = {
+        hidden: { y: 30, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }
+        }
+    };
+
     return (
-        <section className="about" id="about">
-            <div className="about-img">
+        <motion.section
+            className="about"
+            id="about"
+            ref={ref}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 1 }}
+        >
+            <motion.div 
+                className="about-img"
+                style={{ y: yParallax }}
+                initial={{ x: -100, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+            >
                 <img src="/GYM_Website_Images/about.jpg" alt="About us" />
-            </div>
+            </motion.div>
             <div className="about-content">
-                <h2 className="heading">Why Choose Us?</h2>
-                <div className="features-grid">
+                <motion.h2 
+                    className="heading"
+                    initial={{ x: 100, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+                >
+                    Why <span>Choose Us?</span>
+                </motion.h2>
+                <motion.div 
+                    className="features-grid"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    transition={{ staggerChildren: 0.15 }}
+                >
                     {features.map((feature) => (
-                        <div key={feature.id} className="feature-card">
+                        <motion.div 
+                            key={feature.id} 
+                            className="feature-card"
+                            variants={cardVariants}
+                            whileHover={{ y: -5, borderColor: '#D2F509', boxShadow: '0 10px 30px rgba(210, 245, 9, 0.2)' }}
+                        >
                             <p>{feature.text}</p>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
-                <a href="#" className="btn">Book a Free Class</a>
+                </motion.div>
+                <motion.a 
+                    href="#" 
+                    className="btn"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
+                    whileHover={{ scale: 1.05, boxShadow: '0 0 15px #D2F509' }}
+                    whileTap={{ scale: 0.97 }}
+                >
+                    Book a Free Class
+                </motion.a>
             </div>
-        </section>
+        </motion.section>
     );
 };
 

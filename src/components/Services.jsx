@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import './Services.css';
 
 const Services = () => {
@@ -6,47 +7,86 @@ const Services = () => {
         {
             id: 1,
             image: "/GYM_Website_Images/Service1.png",
+            title: "Weight Lifting"
         },
         {
             id: 2,
             image: "/GYM_Website_Images/Service2.png",
+            title: "Cardio & HIIT"
+        },
+        {
+            id: 3,
+            image: "/GYM_Website_Images/image1.jpg",
+            title: "Personal Training"
+        },
+        {
+            id: 4,
+            image: "/GYM_Website_Images/image3.jpg",
+            title: "Group Yoga"
+        },
+        {
+            id: 5,
+            image: "/GYM_Website_Images/image4.jpg",
+            title: "Boxing & MMA"
+        },
+        {
+            id: 6,
+            image: "/GYM_Website_Images/image5.jpg",
+            title: "Diet & Nutrition"
         }
     ];
 
+    const cardVariants = {
+        hidden: { y: 50, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }
+        }
+    };
+
     return (
         <section className="services" id="services">
-            <h2 className="heading">Our <span>Services</span></h2>
-            <div className="services-content">
+            <motion.h2 
+                className="heading"
+                initial={{ x: -100, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+            >
+                Our <span>Services</span>
+            </motion.h2>
+            <motion.div 
+                className="services-content"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ staggerChildren: 0.15 }}
+            >
                 {services.map((service, index) => (
-                    <>
-                        <div key={service.id} className="service-card">
+                    <React.Fragment key={service.id}>
+                        <motion.div 
+                            className="service-card"
+                            variants={cardVariants}
+                            whileHover={{ y: -10, borderColor: '#D2F509', boxShadow: '0 0 20px rgba(210, 245, 9, 0.3)' }}
+                        >
                             <img src={service.image} alt={service.title} className="card-image" />
                             <h4 className="card-title">{service.title}</h4>
-                        </div>
-                        {index === 0 && (
-                            <div className="wave-separator">
-                                <svg viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                                    <defs>
-                                        <linearGradient id="waveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                            <stop offset="0%" style={{ stopColor: '#000000', stopOpacity: 1 }} />
-                                            <stop offset="50%" style={{ stopColor: '#000000', stopOpacity: 1 }} />
-                                            <stop offset="100%" style={{ stopColor: '#000000', stopOpacity: 1 }} />
-                                        </linearGradient>
-                                        <filter id="waveGlow" x="-20%" y="-20%" width="140%" height="140%">
-                                            <feGaussianBlur stdDeviation="5" result="coloredBlur" />
-                                            <feMerge>
-                                                <feMergeNode in="coloredBlur" />
-                                                <feMergeNode in="SourceGraphic" />
-                                            </feMerge>
-                                        </filter>
-                                    </defs>
-
-                                </svg>
+                        </motion.div>
+                        {index === 2 && (
+                            <div className="divider-container">
+                                <motion.div 
+                                    className="divider-line"
+                                    initial={{ width: 0 }}
+                                    whileInView={{ width: '100%' }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 1.5, ease: "easeInOut" }}
+                                />
                             </div>
                         )}
-                    </>
+                    </React.Fragment>
                 ))}
-            </div>
+            </motion.div>
         </section>
     );
 };

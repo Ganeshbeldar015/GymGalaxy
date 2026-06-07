@@ -1,0 +1,72 @@
+.cta-banner {
+    background: #ffffff;
+    padding: 10rem 9%;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.cta-bg-parallax {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(210, 245, 9, 0.1),
+        rgba(210, 245, 9, 0.1) 20px,
+        transparent 20px,
+        transparent 40px
+    );
+    z-index: 1;
+    will-change: transform;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+}
+
+.cta-content h2 {
+    font-size: clamp(3rem, 6vw, 5rem);
+    color: #000000;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #D2F509;
+    width: 0;
+    margin-left: auto;
+    margin-right: auto;
+    animation: typing 3.5s steps(40, end) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: #D2F509 }
+}
+
+.cta-content p {
+    font-size: 1.8rem;
+    color: #333333;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 1.8rem 4rem;
+    background: #D2F509;
+    color: #000;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}

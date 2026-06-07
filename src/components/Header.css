@@ -7,20 +7,26 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 9%;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    transition: all 0.5s ease;
+    padding: 3rem 9%;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+header.scrolled {
+    padding: 1.5rem 9%;
+    background: #ffffff;
+    border-bottom: 2px solid #D2F509;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
 
 .navbar-wrapper{
     display: flex;
     align-items: center;
     gap: 1rem;
-    background: #000000;
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 30px;
     padding: 0.5rem 1.5rem;
+    transition: transform 320ms cubic-bezier(.2,.9,.2,1), opacity 260ms ease;
 }
 
 .logo{
@@ -31,10 +37,6 @@ header{
     transition: 0.3s ease-in-out;
     font-family: 'Playfair Display', serif;
     letter-spacing: 1px;
-}
-
-.logo:hover{
-    transform: scale(1.05);
 }
 
 span{
@@ -48,18 +50,31 @@ span{
 .navbar a{
     font-size: 1.8rem;
     font-weight: 500;
-    color: #aaa;
+    color: #000000;
     margin: 0 1.5rem;
+    position: relative;
     transition: all 0.4s ease;
-    border-bottom: 2px solid transparent;
     letter-spacing: 0.5px;
     font-family: 'Poppins', sans-serif;
 }
 
-.navbar a:hover,
-.navbar a:active{
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #D2F509;
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.navbar a:hover {
     color: #D2F509;
-    border-bottom: 2px solid #D2F509;
 }
 
 .nav-btn{
@@ -71,16 +86,21 @@ span{
     border-radius: 25px;
     font-size: 1.6rem;
     font-weight: 600;
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
     letter-spacing: 1px;
     font-family: 'Poppins', sans-serif;
 }
 
 .nav-btn:hover{
-    background-color: #b8e008;
-    color: #000000;
-    box-shadow: 0 0 20px rgba(210, 245, 9, 0.3);
-} 
+    background-color: transparent;
+    color: #D2F509;
+    box-shadow: 0 0 15px #D2F509;
+    transform: scale(1.05);
+}
+
+.nav-btn:active {
+    transform: scale(0.97);
+}
 
 #menu-icon{
     font-size: 3.6rem;
@@ -89,42 +109,79 @@ span{
     display: none;
 }
 
+#menu-icon.active{
+    transform: rotate(90deg) scale(1.02);
+    transition: transform 240ms ease;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
     #menu-icon {
         display: block;
     }
     
-    .navbar {
+    .navbar-wrapper {
         position: fixed;
         top: 100%;
         left: 0;
         width: 100%;
         padding: 1rem 3%;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        background: rgba(255, 255, 255, 0.98);
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
         transform: translateY(-100%);
         opacity: 0;
         visibility: hidden;
-        transition: all 0.3s ease;
+        transition: transform 360ms cubic-bezier(.2,.9,.2,1), opacity 260ms ease;
+        display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
     }
-    
-    .navbar.active {
+
+    .navbar-wrapper.active {
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
     }
-    
+
+    .navbar li{
+        list-style: none;
+        opacity: 0;
+        transform: translateY(8px);
+        transition: transform 300ms cubic-bezier(.2,.9,.2,1), opacity 300ms ease;
+    }
+
+    .navbar li:nth-child(1){ transition-delay: 0.04s; }
+    .navbar li:nth-child(2){ transition-delay: 0.08s; }
+    .navbar li:nth-child(3){ transition-delay: 0.12s; }
+    .navbar li:nth-child(4){ transition-delay: 0.16s; }
+    .navbar li:nth-child(5){ transition-delay: 0.20s; }
+
+    .navbar-wrapper.active .navbar li{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .top-btn{
+        opacity: 0;
+        transform: translateY(6px);
+        transition: transform 300ms ease, opacity 300ms ease;
+        transition-delay: 0.22s;
+    }
+
+    .navbar-wrapper.active .top-btn{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
     .navbar a {
         margin: 1rem 0;
         font-size: 2rem;
         color: #000;
     }
-    
+
     .top-btn {
-        display: none;
+        display: block;
+        margin-top: 0.5rem;
     }
 }

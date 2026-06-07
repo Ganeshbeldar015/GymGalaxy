@@ -14,12 +14,50 @@
 
 html{
     font-size: 62.5%;
-    overflow-x: hidden;    
-}   
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    height: 100%;
+}
 
 body{
-    background: #ffffff;
-    color: #000000; 
+    min-height: 100%;
+    background: linear-gradient(180deg, rgba(4, 5, 6, 0.88), rgba(4, 5, 6, 0.95)),
+                url('/GYM_Website_Images/home page.jpg') center/cover fixed no-repeat;
+    color: #f4f4f4;
+}
+
+/* Custom Cursor */
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #D2F509;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease-out;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px #D2F509;
+}
+
+@keyframes kenburns {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.ken-burns {
+    animation: kenburns 20s ease infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(210, 245, 9, 0.4); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(210, 245, 9, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(210, 245, 9, 0); }
+}
+
+.pulse-glow {
+    animation: pulse 2s infinite;
 }
 
 h1, h2, h3, h4, h5, h6 {
