@@ -1,8 +1,8 @@
 .footer {
-  background: #050608;
-  color: #f4f4f4;
+  background: #ffffff;
+  color: #000000;
   padding: 80px 5% 40px;
-  border-top: 1px solid rgba(210, 245, 9, 0.16);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
   margin-top: 60px;
 }
 
@@ -17,7 +17,7 @@
   align-items: flex-start;
   margin-bottom: 50px;
   padding-bottom: 40px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .footer-social {
@@ -26,7 +26,7 @@
 }
 
 .footer-social a {
-    color: #f4f4f4;
+    color: #000000;
     font-size: 2.4rem;
     transition: all 0.25s ease;
 }
@@ -37,7 +37,7 @@
   margin-bottom: 1rem;
   font-family: 'Playfair Display', serif;
   letter-spacing: 1px;
-  color: #ffffff;
+  color: #000000;
 }
 
 .footer-logo span {
@@ -45,7 +45,7 @@
 }
 
 .footer-tagline {
-  color: #c9c9c9;
+  color: #444444;
   font-size: 1.45rem;
   line-height: 1.75;
   max-width: 560px;
@@ -62,7 +62,7 @@
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 20px;
-  color: #ffffff;
+  color: #000000;
 }
 
 .footer-links {
@@ -75,7 +75,7 @@
 
 .footer-links a {
   display: inline-block;
-  color: #c8c8c8;
+  color: #444444;
   text-decoration: none;
   font-size: 1.4rem;
   transition: all 0.3s ease;
@@ -83,6 +83,7 @@
 
 .footer-links a:hover {
   color: #D2F509;
+  transform: translateX(4px);
 }
 
 .footer-contact {
@@ -90,7 +91,7 @@
 }
 
 .footer-contact li {
-  color: #c8c8c8;
+  color: #444444;
   font-size: 1.4rem;
   margin-bottom: 12px;
   display: flex;
@@ -109,27 +110,27 @@
 }
 
 .hours-card {
-  background: rgba(255, 255, 255, 0.03);
-  color: #ffffff;
+  background: #f9f9f9;
+  color: #000000;
   padding: 30px;
   border-radius: 24px;
   text-align: center;
   width: 100%;
-  border: 1px solid rgba(210, 245, 9, 0.12);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
 }
 
 .hours-card h4 {
   font-size: 1.8rem;
   margin-bottom: 15px;
   font-weight: 600;
-  color: #ffffff;
+  color: #000000;
 }
 
 .hours-card p {
   font-size: 1.4rem;
   margin-bottom: 8px;
-  color: #d1d1d1;
+  color: #444444;
 }
 
 .location-btn {
@@ -148,8 +149,8 @@
 }
 
 .location-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 16px 30px rgba(210, 245, 9, 0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(210, 245, 9, 0.25);
 }
 
 .footer-bottom {
@@ -157,11 +158,11 @@
   justify-content: space-between;
   align-items: center;
   padding-top: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .footer-privacy {
-  color: #333333;
+  color: #666666;
   text-decoration: none;
   font-size: 1.4rem;
   transition: color 0.3s ease;
@@ -172,7 +173,7 @@
 }
 
 .footer-bottom-right p {
-  color: #c9c9c9;
+  color: #666666;
   font-size: 1.4rem;
 }
 

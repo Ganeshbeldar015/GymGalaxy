@@ -15,15 +15,36 @@
 html{
     font-size: 62.5%;
     overflow-x: hidden;
-    scroll-behavior: smooth;
+    scroll-behavior: initial;
     height: 100%;
+}
+
+/* Lenis Smooth Scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
 
 body{
     min-height: 100%;
-    background: linear-gradient(180deg, rgba(4, 5, 6, 0.88), rgba(4, 5, 6, 0.95)),
-                url('/GYM_Website_Images/home page.jpg') center/cover fixed no-repeat;
-    color: #f4f4f4;
+    background: #ffffff;
+    color: #000000;
 }
 
 /* Custom Cursor */
