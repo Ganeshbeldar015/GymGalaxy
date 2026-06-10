@@ -6,25 +6,25 @@ const Trainers = () => {
     const trainers = [
         {
             id: 1,
-            name: "John Doe",
+            name: "Ganesh",
             role: "Bodybuilding Coach",
             image: "/GYM_Website_Images/image1.jpg"
         },
         {
             id: 2,
-            name: "Jane Smith",
+            name: "Sarthak",
             role: "Yoga Instructor",
             image: "/GYM_Website_Images/image3.jpg"
         },
         {
             id: 3,
-            name: "Mike Tyson",
+            name: "Utkarsh",
             role: "Boxing Trainer",
             image: "/GYM_Website_Images/image4.jpg"
         },
         {
             id: 4,
-            name: "Alex Johnson",
+            name: "Abdullah",
             role: "Crossfit Expert",
             image: "/GYM_Website_Images/image5.jpg"
         }
