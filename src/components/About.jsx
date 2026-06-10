@@ -111,6 +111,14 @@ const About = () => {
                             key={feature.id} 
                             className="feature-item"
                             variants={cardVariants}
+                            whileHover={{ 
+                                scale: 1.03, 
+                                x: -8, 
+                                borderColor: 'rgba(210, 245, 9, 0.8)',
+                                boxShadow: '0 20px 40px rgba(210, 245, 9, 0.12)' 
+                            }}
+                            whileTap={{ scale: 0.98 }}
+                            transition={{ type: 'spring', stiffness: 400, damping: 25 }}
                         >
                             <div className="feature-icon-container">
                                 {feature.icon}
@@ -146,6 +154,14 @@ const About = () => {
                             key={feature.id} 
                             className="feature-item"
                             variants={cardVariants}
+                            whileHover={{ 
+                                scale: 1.03, 
+                                x: 8, 
+                                borderColor: 'rgba(210, 245, 9, 0.8)',
+                                boxShadow: '0 20px 40px rgba(210, 245, 9, 0.12)' 
+                            }}
+                            whileTap={{ scale: 0.98 }}
+                            transition={{ type: 'spring', stiffness: 400, damping: 25 }}
                         >
                             <div className="feature-icon-container">
                                 {feature.icon}
