@@ -17,6 +17,12 @@ html{
     overflow-x: hidden;
     scroll-behavior: initial;
     height: 100%;
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+
+html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
 }
 
 /* Lenis Smooth Scroll */
@@ -45,6 +51,12 @@ body{
     min-height: 100%;
     background: #ffffff;
     color: #000000;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 /* Custom Cursor */
