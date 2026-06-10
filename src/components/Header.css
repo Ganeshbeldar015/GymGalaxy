@@ -31,12 +31,16 @@ header.scrolled {
 
 .logo{
     font-size: 3rem;
-    color: #000000;
+    color: #ffffff; /* White color for visibility on dark hero image background */
     font-weight: 800;
     cursor: pointer;
-    transition: 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
     font-family: 'Playfair Display', serif;
     letter-spacing: 1px;
+}
+
+header.scrolled .logo {
+    color: #000000; /* Black color when scrolled onto light background sections */
 }
 
 .logo span{
